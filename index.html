@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=1080"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="mobile-util.js"></script>
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div class="wap">
+        <div class="header">
+            <div class="header_auto">
+                <div class="title">
+                    <img src="images/1.png" class="img1" alt=""/>
+                    <h1>Notifications</h1>
+                    <img src="images/2.png" class="img2" alt=""/>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li>Friends</li>
+                        <li>Following</li>
+                        <li>Staff</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cent">
+        <div class="cent_auto">
+            <div class="cent_text">
+                    <img src="images/3.png" class="img3" alt=""/>
+                    <div class="text">
+                        <!--<p class="p1"><span>Michael Masterson </span>sent you a message</p>-->
+                        <!--<p class="p2">5 minute ago</p>-->
+                    </div>
+                    <img src="images/8.png" class="img4" alt=""/>
+                </div>
+                <div class="cent_text">
+                    <img src="images/4.png" class="img3" alt=""/>
+                    <div class="text"></div>
+                    <img src="images/9.png" class="img4" alt=""/>
+                </div>
+                <div class="cent_text">
+                    <img src="images/5.png" class="img3" alt=""/>
+                    <div class="text"></div>
+                    <img src="images/10.png" class="img4" alt=""/>
+                </div>
+                <div class="cent_text">
+                    <img src="images/6.png" class="img3" alt=""/>
+                    <div class="text"></div>
+                    <img src="images/11.png" class="img4" alt=""/>
+                </div>
+                <div class="cent_text">
+                    <img src="images/7.png" class="img3" alt=""/>
+                    <div class="text"></div>
+                    <img src="images/12.png" class="img4" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $.ajax({
+        url:"data.json",
+        type:"get",
+        success:function(e){
+            for(var i in e){
+                $(".text").eq(i).html("<p class='p1'><span>"+e[i].p1+"</span>"+e[i].span+"</p><p class='p2'>"+e[i].p2+"</p>")
+            }
+        }
+    })
+</script>
